@@ -86,6 +86,7 @@ if page == "Home":
     """)
 
 # ---------------- INPUT ----------------
+
 elif page == "Water Quality Input":
 
     st.title("Water Quality Input")
@@ -96,16 +97,45 @@ elif page == "Water Quality Input":
         "the ML team confirms the selected model features and units."
     )
 
-    st.text_input("Sample ID", placeholder="Enter sample identification")
+    with st.form("water_quality_form"):
 
-    st.selectbox(
-        "Water Source",
-        ["Select source", "Bathroom", "Laundry", "Kitchen", "Mixed greywater"]
-    )
+        sample_id = st.text_input(
+            "Sample ID",
+            placeholder="Enter sample identification"
+        )
+
+        water_source = st.selectbox(
+            "Water Source",
+            [
+                "Select source",
+                "Bathroom",
+                "Laundry",
+                "Kitchen",
+                "Mixed greywater"
+            ]
+        )
+
+        submitted = st.form_submit_button(
+            "Submit Sample"
+        )
+
+    if submitted:
+        if not sample_id.strip():
+            st.error("Please enter a Sample ID.")
+
+        elif water_source == "Select source":
+            st.error("Please select a Water Source.")
+
+        else:
+            st.success("Sample information submitted successfully!")
+
+            st.write("**Sample ID:**", sample_id)
+            st.write("**Water Source:**", water_source)
 
     st.warning(
         "Final water-quality parameters are awaiting model confirmation."
     )
+
 
 # ---------------- PREDICTIONS ----------------
 elif page == "Predictions":
