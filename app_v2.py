@@ -158,6 +158,8 @@ elif page == "Water Quality Input":
             st.error("Please select a Water Source.")
 
         else:
+                st.session_state["sample_id"] = sample_id.strip()
+    st.session_state["water_source"] = water_source
             st.success("Sample information submitted successfully!")
 
             st.write("**Sample ID:**", sample_id)
@@ -197,6 +199,12 @@ elif page == "Predictions":
 
         st.markdown("**Expected output:**")
         st.write("Recommended reuse suitability")
+        if "sample_id" in st.session_state:
+    st.subheader("Current Sample")
+    st.write("**Sample ID:**", st.session_state["sample_id"])
+    st.write("**Water Source:**", st.session_state["water_source"])
+else:
+    st.info("No sample has been submitted yet.")
 
     st.divider()
 
