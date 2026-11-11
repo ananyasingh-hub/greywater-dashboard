@@ -200,12 +200,12 @@ elif page == "Predictions":
 
         st.markdown("**Expected output:**")
         st.write("Recommended reuse suitability")
-    if "sample_id" in st.session_state:
-    st.subheader("Current Sample")
-    st.write("**Sample ID:**", st.session_state["sample_id"])
-    st.write("**Water Source:**", st.session_state["water_source"])
-else:
-    st.info("No sample has been submitted yet.")
+            if "sample_id" in st.session_state:
+            st.subheader("Current Sample")
+            st.write("**Sample ID:**", st.session_state["sample_id"])
+            st.write("**Water Source:**", st.session_state["water_source"])
+        else:
+            st.info("No sample has been submitted yet.")
 
     st.divider()
 
