@@ -49,41 +49,72 @@ page = st.sidebar.radio(
 )
 
 # ---------------- HOME ----------------
+
 if page == "Home":
 
     st.title("💧 Greywater Management System")
     st.subheader("Smart Water Quality Monitoring & Reuse")
 
-    st.write("""
-    Welcome to the Greywater Management Dashboard.
+    st.success(
+        "A machine-learning-based approach to greywater "
+        "quality analysis and reuse assessment."
+    )
 
-    This system aims to analyse greywater quality using machine
-    learning and assess its suitability for different reuse purposes.
+    st.write("""
+    Welcome to the Greywater Management Dashboard!
+
+    This system aims to analyse greywater quality using
+    machine learning and assess its potential suitability
+    for different reuse purposes.
     """)
 
     st.divider()
-    st.subheader("Project Overview")
+
+    st.header("Our Project Objectives")
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.info("💧 **Water Quality**\n\nAnalyse water parameters.")
+        st.info(
+            "💧 **Water Quality Analysis**\n\n"
+            "Study important greywater quality parameters."
+        )
 
     with col2:
-        st.info("🤖 **Machine Learning**\n\nPredict water quality categories.")
+        st.info(
+            "🤖 **Machine Learning**\n\n"
+            "Predict water quality categories using ML."
+        )
 
     with col3:
-        st.info("♻️ **Reuse Assessment**\n\nAssess potential reuse suitability.")
+        st.info(
+            "♻️ **Reuse Assessment**\n\n"
+            "Evaluate potential suitability for reuse."
+        )
 
     st.divider()
-    st.subheader("Project Workflow")
+
+    st.header("How the System Works")
 
     st.markdown("""
-    1. Enter greywater quality measurements.
-    2. Analyse water-quality parameters.
-    3. Predict the water quality category.
-    4. Assess suitability for reuse.
+    **Step 1 — Input:** Enter greywater sample information
+    and quality measurements.
+
+    **Step 2 — Analysis:** Examine the water-quality data.
+
+    **Step 3 — Prediction:** Generate water-quality
+    category predictions using machine learning.
+
+    **Step 4 — Assessment:** Evaluate potential reuse suitability.
     """)
+
+    st.divider()
+
+    st.caption(
+        "Greywater Management System | Machine Learning "
+        "Based Water Quality Analysis"
+    )
+
 
 # ---------------- INPUT ----------------
 
