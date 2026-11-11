@@ -158,10 +158,9 @@ elif page == "Water Quality Input":
             st.error("Please select a Water Source.")
 
         else:
-                st.session_state["sample_id"] = sample_id.strip()
-    st.session_state["water_source"] = water_source
+                  st.session_state["sample_id"] = sample_id.strip()
+                  st.session_state["water_source"] = water_source
             st.success("Sample information submitted successfully!")
-
             st.write("**Sample ID:**", sample_id)
             st.write("**Water Source:**", water_source)
 
