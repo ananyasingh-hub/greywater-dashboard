@@ -138,24 +138,50 @@ elif page == "Water Quality Input":
 
 
 # ---------------- PREDICTIONS ----------------
+
 elif page == "Predictions":
 
     st.title("Machine Learning Predictions")
+    st.write(
+        "View the predicted water quality and possible reuse "
+        "applications of your greywater sample."
+    )
+
+    st.divider()
 
     col1, col2 = st.columns(2)
 
     with col1:
         st.subheader("💧 Water Quality Category")
-        st.info("Prediction will appear here after model integration.")
+
+        st.info("⏳ Awaiting ML model integration")
+
+        st.markdown("**Expected output:**")
+        st.write("Water quality classification")
 
     with col2:
         st.subheader("♻️ Reuse Suitability")
-        st.info("Reuse prediction will appear here after model integration.")
 
-    st.caption(
+        st.info("⏳ Awaiting ML model integration")
+
+        st.markdown("**Expected output:**")
+        st.write("Recommended reuse suitability")
+
+    st.divider()
+
+    st.subheader("Prediction Information")
+
+    st.write(
+        "Once the trained ML model is connected, this page "
+        "will display predictions based on the submitted "
+        "water-quality measurements."
+    )
+
+    st.warning(
         "ML predictions are estimates, not a guarantee of safe reuse. "
         "Applicable standards and laboratory testing must also be considered."
     )
+
 
 # ---------------- ANALYTICS ----------------
 elif page == "Analytics":
