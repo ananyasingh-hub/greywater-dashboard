@@ -187,25 +187,22 @@ elif page == "Predictions":
 
     with col1:
         st.subheader("💧 Water Quality Category")
-
         st.info("⏳ Awaiting ML model integration")
-
         st.markdown("**Expected output:**")
         st.write("Water quality classification")
 
     with col2:
         st.subheader("♻️ Reuse Suitability")
-
         st.info("⏳ Awaiting ML model integration")
-
         st.markdown("**Expected output:**")
         st.write("Recommended reuse suitability")
-            if "sample_id" in st.session_state:
-            st.subheader("Current Sample")
-            st.write("**Sample ID:**", st.session_state["sample_id"])
-            st.write("**Water Source:**", st.session_state["water_source"])
-        else:
-            st.info("No sample has been submitted yet.")
+
+    if "sample_id" in st.session_state:
+        st.subheader("Current Sample")
+        st.write("**Sample ID:**", st.session_state["sample_id"])
+        st.write("**Water Source:**", st.session_state["water_source"])
+    else:
+        st.info("No sample has been submitted yet.")
 
     st.divider()
 
@@ -221,6 +218,7 @@ elif page == "Predictions":
         "ML predictions are estimates, not a guarantee of safe reuse. "
         "Applicable standards and laboratory testing must also be considered."
     )
+
 
 
 # ---------------- ANALYTICS ----------------
