@@ -57,15 +57,16 @@ if page == "Home":
     st.subheader("Smart Water Quality Monitoring & Reuse")
 
     st.success(
-        "A machine-learning-based approach to greywater "
-        "quality analysis and reuse assessment."
-    )
+        "A greywater monitoring and assessment tool "
+        "designed for water inspectors and monitoring personnel."
+        )
 
     st.write("""
     Welcome to the Greywater Management Dashboard!
 
-    This system aims to analyse greywater quality using
-    machine learning and assess its potential suitability
+    This system assists water inspectors and monitoring
+    personnel in analysing greywater quality using
+    machine learning and assessing its potential suitability
     for different reuse purposes.
     """)
 
