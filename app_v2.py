@@ -248,14 +248,7 @@ elif page == "Analytics":
 
         st.divider()
 
-        st.subheader("Dataset Preview")
-        st.dataframe(df.head(10), use_container_width=True)
-        st.download_button(
-    label="📥 Download Full Dataset",
-    data=df.to_csv(index=False).encode("utf-8"),
-    file_name="greywater_dataset.csv",
-    mime="text/csv",
-        )
+        
 
         st.divider()
 
