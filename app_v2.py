@@ -130,10 +130,11 @@ elif page == "Water Quality Input":
 
     with st.form("water_quality_form"):
 
-        sample_id = st.text_input(
+                sample_id = st.text_input(
             "Sample ID",
-            placeholder="Enter sample identification"
-        )
+            placeholder="GW-001",
+            help="Format: GW- followed by 3 digits (e.g., GW-001)."
+                )
 
         water_source = st.selectbox(
             "Water Source",
@@ -151,8 +152,11 @@ elif page == "Water Quality Input":
         )
 
     if submitted:
-        if not sample_id.strip():
+                if not sample_id.strip():
             st.error("Please enter a Sample ID.")
+
+        elif not re.fullmatch(r"GW-\d{3}", sample_id.strip()):
+            st.error("Invalid Sample ID. Use the format GW-001.")
 
         elif water_source == "Select source":
             st.error("Please select a Water Source.")
